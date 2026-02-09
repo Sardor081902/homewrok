@@ -9,46 +9,74 @@ body {
     justify-content: center;
 }
 
-.box{
+.box {
     width: 500px;
     height: auto;
     background-color: orange;
     margin-top: 20vh;
     text-align: center;
     padding: 10px;
-    position: relative ;
+    position: relative;
+    border-radius: 20px;
 }
 
-input{
-    opacity: 0;
+input {
+    border: none;
+    font-size: 30px;
+    margin: 10px;
+    visibility: hidden;
 }
 
+button {
+    transition: all 300ms;
+    display: inline-block;
+    right: 0;
+    background-color: inherit;
+    border: none;
+}
 
+.del{
+    visibility: hidden;
+    transform: all 300ms;
+}
 
-hr{
+.del:hover{
+    transform: scale(1.2);
+    color: red;
+}
+
+.del:active {
+    transform: scale(1.1);
+}
+
+.bt1.act,
+.bt2.act,
+.bt3.act,
+.bt4.act {
+    transform: rotate(-40deg) scale(0.9);
+    color: green;
+}
+
+/* hr {
     height: 2px;
     width: 520px;
     background-color: white;
     box-sizing: content-box;
     box-shadow: none;
-}
+} */
 
-.bt1{
-   right: 0;
-   background-color: inherit;
-   border: none;
-}
+
 
 i {
     font-size: 24px;
     transition: all 300ms;
 }
 
-i:hover{
-    transform: scale(1.1);
+i:hover {
+    transform: scale(1.3);
 }
 
-i:active{
+i:active {
     transform: scale(1);
     color: darkslategrey;
 }

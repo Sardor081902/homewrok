@@ -1,34 +1,45 @@
-// console.log("hi");
+const bt1 = document.querySelector('.bt1');
+const input1 = document.getElementById('input1');
+const bt1_del = document.getElementById('bt1_del');
 
-const text1 = document.querySelector(".text1")
-const text2 = document.querySelector(".text2")
-const input1  = document.querySelector("#input1")
-const icon1 = document.querySelector("#icon1")
-const input2  = document.querySelector("#input2")
-const icon2 = document.querySelector("#icon2")
+const bt2 = document.querySelector('.bt2');
+const input2 = document.getElementById('input2');
+const bt2_del = document.getElementById('bt2_del');
 
-icons = [icon1,icon2]
+const bt3 = document.querySelector('.bt3');
+const input3 = document.getElementById('input3');
+const bt3_del = document.getElementById('bt3_del');
 
-// input1.addEventListener('input', ()=>{
-//     if(icon1.classList.contains('act'))text1.innerText = input1.value;
-// });
-
+const bt4 = document.querySelector('.bt4');
+const input4 = document.getElementById('input4');
+const bt4_del = document.getElementById('bt4_del')
 
 
-function texts(it, ic, target) {
-    if (!it || !ic || !target) return;
+function texts(it, i, c) {
+    if (!it || !i || !c) return;
 
-    it.addEventListener("input", () => {
-        if (ic.id.includes('act')) {
-            target.innerText = it.value;
+    it.addEventListener("click", () => {
+        it.classList.toggle("act");
+
+        if (it.classList.contains("act")) {
+            c.style.visibility = "visible";
+            i.style.visibility = "visible";
+            i.focus();
+        } else {
+            c.style.visibility = "hidden";
+            i.style.visibility = "hidden";
         }
+    });
+
+    c.addEventListener("click", () => {
+        i.value = ""; 
+        i.focus();    
     });
 }
 
 
-
-
-texts(input1, icon1, text1);
-texts(input2, icon2, text2);
-
-
+texts(bt1, input1, bt1_del);
+texts(bt2, input2, bt2_del);
+texts(bt3, input3, bt3_del);
+texts(bt4, input4, bt4_del);
+~
