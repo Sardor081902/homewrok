@@ -22,8 +22,11 @@ const add = document.querySelector('.add')
 function texts(bt, input, bt_del, add, list) {
     if (!bt || !input || !bt_del || !add || !list) return;
 
+
+
     bt.addEventListener("click", () => {
         bt.classList.add("act");
+
 
         if (bt.classList.contains("act")) {
             bt_del.style.visibility = "visible";
@@ -36,6 +39,8 @@ function texts(bt, input, bt_del, add, list) {
             add.style.visibility = "hidden";
         }
     });
+        
+
 
     bt_del.addEventListener("click", () => {
         list.innerHTML = ` `;
@@ -45,13 +50,11 @@ function texts(bt, input, bt_del, add, list) {
     add.addEventListener("click", () => {
 
         let li = document.createElement("li");
-        if (li.textContent.trim() !== ""){
-            li.textContent = input.value;
-            li.id = li.textContent
-        }else{
-            
+        if(input.value.trim() === ""){
+            return
         }
-
+        li.textContent = input.value;
+        li.id = li.textContent
 
         li.addEventListener("click", () => {
             li.remove()
