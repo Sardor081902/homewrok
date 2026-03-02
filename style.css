@@ -10,7 +10,7 @@ body {
 }
 
 .box {
-    width: 500px;
+    width: auto;
     height: auto;
     background-color: orange;
     margin-top: 20vh;
@@ -18,13 +18,18 @@ body {
     padding: 10px;
     position: relative;
     border-radius: 20px;
+    border: 2px;
+    border-color: black;
+    border-style: double;
 }
 
 input {
-    border: none;
+    border: groove;
+    border-color: black;
     font-size: 30px;
     margin: 10px;
     visibility: hidden;
+    border-radius: 20px;
 }
 
 button {
@@ -33,6 +38,10 @@ button {
     right: 0;
     background-color: inherit;
     border: none;
+}
+
+.add{
+    visibility: hidden;
 }
 
 .del{
@@ -78,5 +87,24 @@ i:hover {
 
 i:active {
     transform: scale(1);
-    color: darkslategrey;
+    color: rgb(117, 117, 117);
+}
+
+li{
+    background-color: aliceblue;
+    width: 200px;
+    border-radius: 10px;
+    list-style: decimal-leading-zero ;
+    margin: 10px;
+    margin-left: 32%;
+}
+
+.list{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.add:hover{
+    color: rgb(2, 106, 18);
 }
